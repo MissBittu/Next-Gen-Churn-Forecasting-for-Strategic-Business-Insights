@@ -1,0 +1,15 @@
+AvgMonthlyCharges
+MonthlyCharges
+TotalCharges
+tenure
+IsNewCustomer
+IsLoyalCustomer
+IsMonthToMonth
+ContractValue
+TotalServices
+IsElectronicPayment
+PaperlessBillingFlag
+HighChargeNewCustomer
+SeniorAlone
+EngagementScore
+CompositeRiskScore
