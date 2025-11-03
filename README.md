@@ -87,7 +87,7 @@ Early Stopping (NN): Prevents overfitting via adaptive patience control
 
 ⚙️ Installation
 # clone repo
-git clone https://github.com/<your-username>/Next-Gen-Churn-Forecasting.git
+git clone (https://github.com/MissBittu/Next-Gen-Churn-Forecasting-for-Strategic-Business-Insights.git)
 cd Next-Gen-Churn-Forecasting
 
 # install dependencies
