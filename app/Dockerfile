@@ -1,14 +1,23 @@
-FROM python:3.11-slim
+# 1. Base image
+FROM python:3.10-slim
 
+# 2. Set working directory inside container
 WORKDIR /app
 
-# Copy only what you need
+# 3. Copy dependency list
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the project (including model folder)
-COPY .. /app
+# 4. Install system dependencies + Python libs
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential \
+    && pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 8000
+# 5. Copy everything else
+COPY . .
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# 6. Expose Streamlit default port
+EXPOSE 8501
+
+# 7. Run Streamlit app
+CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]

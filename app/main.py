@@ -155,3 +155,5 @@ if uploaded_file is not None:
         st.write("Debug Info:")
         st.write("X shape:", X.shape)
         st.dataframe(X.head())
+        st.title("Churn Prediction Results")
+        st.button("Refresh Results")
